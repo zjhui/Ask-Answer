@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AskAnswer</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="container">
+        <div id="topbar">
+          <ul class="nav nav-tabs">
+            <li class="active">
+            <a href="#">Questions</a>
+            </li>
+            <li><a href="#">Tags</a></li>
+            <li><a href="#">Users</a></li>
+          </ul>
+        </div>
+
+        <div id="main" class="container clear-top">
+            <div class="title">
+                <%= yield %>
+            </div>
+        </div>
+      </div>
+      <div id="push"></div>
+    </div>
+
+    <div id="footbar">
+      <div class="container"> 
+        <p class="muted credit">
+        Created by
+        <a href="http://zjhui.me">zjhui</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
