@@ -17,12 +17,15 @@
             <li><a href="#">Tags</a></li>
             <li><a href="#">Users</a></li>
           </ul>
+          <div class="askquestion">
+              <p>
+                <%= link_to "Ask Question", new_question_path, :class => "btn btn-primary" %>
+              </p>
+          </div>
         </div>
 
         <div id="main" class="container clear-top">
-            <div class="title">
-                <%= yield %>
-            </div>
+            <%= yield %>
         </div>
       </div>
       <div id="push"></div>

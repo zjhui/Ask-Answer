@@ -1,0 +1,7 @@
+<%= simple_form_for @question do |f| %>
+    
+<%= f.input :title, :input_html => { :class => "span6", required: true } %>
+<%= f.input :content, :input_html => { :class => "span6" } %>
+<%= f.button :submit, :class => 'btn-primary' %>
+<%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger"%>
+<% end %>

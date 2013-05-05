@@ -1,7 +1,8 @@
 <ul>
     <% @questions.each do |questions| %>
         <li>
-            <%= questions.title %>
+            <%= link_to questions.title, questions %>
+            <%= " created at #{time_ago_in_words(questions.created_at)} ago" %>
         </li>
     <% end %>
 </ul>
