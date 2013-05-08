@@ -1,2 +1,4 @@
 <h2><%= @question.title %></h2>
-<p><%= @question.content %></p>
+<p><%= markdown(@question.content) %></p>
+
+<%= link_to 'Destroy', @question, :confirm => 'Are you sure?', method: :delete, :class => "btn btn-danger" %>

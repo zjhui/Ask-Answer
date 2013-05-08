@@ -1,7 +1,9 @@
 <%= simple_form_for @question do |f| %>
-    
-<%= f.input :title, :input_html => { :class => "span6", required: true } %>
+<fieldset>
+    <legend><%= @question.new_record? ? t("question.create_topic") : t("questions.edit_topic") %></legend> 
+<%= f.input :title, :input_html => { :class => "span6" } %>
 <%= f.input :content, :input_html => { :class => "span6" } %>
 <%= f.button :submit, :class => 'btn-primary' %>
-<%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger"%>
+<%= link_to 'Cancel', @question.id.blank? ? questions_path : question_path(@question), :class => "btn btn-danger" %>
+</fieldset>
 <% end %>

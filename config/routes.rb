@@ -12,7 +12,8 @@ AskAnswer::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :questions, :only => [:index, :show, :new, :create]
+  # resources :questions, :only => [:index, :show, :new, :create, :edit]
+  resources :questions
   # resources :questions
 
   # Sample resource route with options:

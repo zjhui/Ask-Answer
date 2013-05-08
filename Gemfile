@@ -10,7 +10,7 @@ gem 'sqlite3'
 
 # gem 'anjlab-bootstrap-rails', '2.0.3.2', :require => 'bootstrap-rails'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                                :git => 'git://github.com/anjlab/bootstrap-rails.git'
+                              :git => 'git://github.com/anjlab/bootstrap-rails.git'
 gem 'bootstrap-will_paginate', '0.0.3'
 gem 'bootstrap_helper', "1.4.1"
 
@@ -39,6 +39,10 @@ gem 'jquery-rails'
 
 # form
 gem 'simple_form'
+
+# markdown and highlight the code
+gem 'redcarpet'
+# gem "github-markdown", "~> 0.5.3"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

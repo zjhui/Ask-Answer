@@ -3,6 +3,7 @@
         <li>
             <%= link_to questions.title, questions %>
             <%= " created at #{time_ago_in_words(questions.created_at)} ago" %>
+            <%= link_to 'Edit', edit_question_path(questions), :method => :get, :class => "btn btn-mini btn-warning" %>
         </li>
     <% end %>
 </ul>
