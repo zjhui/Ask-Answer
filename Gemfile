@@ -42,6 +42,12 @@ gem 'simple_form'
 
 # markdown and highlight the code
 gem 'redcarpet'
+
+# tags
+gem 'acts-as-taggable-on'
+
+# 用户系统
+gem 'devise'
 # gem "github-markdown", "~> 0.5.3"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

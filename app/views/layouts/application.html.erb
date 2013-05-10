@@ -17,12 +17,22 @@
             <li><a href="#">Tags</a></li>
             <li><a href="#">Users</a></li>
           </ul>
+          <div id="user_nav">
+              <% if user_signed_in? %>
+                <%= current_user.username %>
+                <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+              <% else %>
+                <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+              <% end %>
+          </div>
           <div class="askquestion">
               <p>
                 <%= link_to "Ask Question", new_question_path, :class => "btn btn-primary" %>
               </p>
           </div>
         </div>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 
         <div id="main" class="container clear-top">
             <%= yield %>
@@ -30,7 +40,7 @@
       </div>
       <div id="push"></div>
     </div>
-
+  
     <div id="footbar">
       <div class="container"> 
         <p class="muted credit">

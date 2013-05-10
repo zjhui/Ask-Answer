@@ -1,4 +1,6 @@
 AskAnswer::Application.routes.draw do
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -13,7 +15,10 @@ AskAnswer::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   # resources :questions, :only => [:index, :show, :new, :create, :edit]
+  root :to => "questions#index"
+  get 'tags/:tag', to: 'questions#index', as: :tag
   resources :questions
+  devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
   # resources :questions
 
   # Sample resource route with options:

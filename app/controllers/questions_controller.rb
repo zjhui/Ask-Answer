@@ -1,7 +1,11 @@
 class QuestionsController < ApplicationController 
-  
+  before_filter :authenticate_user!, :except => [:index,:show]
   def index
-    @questions = Question.all
+    if params[:tag]
+      @questions = Question.tagged_with(params[:tag])
+    else
+      @questions = Question.all
+    end
   end
   
   def show

@@ -1,11 +1,12 @@
-<ul>
-    <% @questions.each do |questions| %>
-        <li>
-            <%= link_to questions.title, questions %>
-            <%= " created at #{time_ago_in_words(questions.created_at)} ago" %>
-            <%= link_to 'Edit', edit_question_path(questions), :method => :get, :class => "btn btn-mini btn-warning" %>
-        </li>
+<div id="question">
+    <% @questions.each do |question| %>
+    <h2><%= link_to question.title, question %></h2>
+    <p>
+        <%= " created at #{time_ago_in_words(question.created_at)} ago" %>
+        <%= link_to 'Edit', edit_question_path(question), :method => :get, :class => "btn btn-mini btn-warning" %>
+    </p>
+    <p>
+        Tags: <%= raw question.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+    </p>
     <% end %>
-</ul>
-
-
+</div>
